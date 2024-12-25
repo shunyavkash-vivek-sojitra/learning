@@ -13,6 +13,10 @@ body {
   background-color: whitesmoke;
 }
 
+.text-capital {
+  text-transform: uppercase;
+}
+
 a {
   text-transform: capitalize;
   text-decoration: none;
@@ -25,7 +29,7 @@ a {
 }
 
 section {
-  margin-top: 12px;
+  margin-top: 2rem;
 }
 
 .div-center {
@@ -104,7 +108,7 @@ section {
 }
 
 .card-wrapper {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 
 .card img {
@@ -132,7 +136,8 @@ section {
 .card-body p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.6px;
+  line-height: 1.3rem;
   padding-top: 0.5rem;
 }
 
@@ -143,6 +148,25 @@ section {
   margin-top: 1rem;
 }
 
+.copyright-wrapper {
+  width: 100%;
+  font-style: normal;
+}
+
 .copyright-wrapper p {
+  text-align: center;
+  margin-top: 2rem;
+  font-style: italic;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.footer-list {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-list li {
+  line-height: 2rem;
 }
