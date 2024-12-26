@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta name="keyword" content="HTML,HTML Table,web">
+    <meta name="description" content="Simple table implemented with HTML.">
+    <title>Simple Table</title>
+    <link rel="stylesheet" href="./assets/styles/simple-table.css">
+</head>
+
+<body>
+    <!-- main content -->
+    <main>
+        <!-- table section -->
+        <section>
+            <table>
+                <caption class="text-capitalize">table name</caption>
+                <colgroup>
+                    <!-- first two columns selected -->
+                    <col />
+                    <col />
+                    <!-- third columns selected -->
+                    <col span="1" class="painted" />
+                </colgroup>
+                <thead>
+                    <tr class="text-capitalize">
+                        <th>index</th>
+                        <th>column</th>
+                        <th>colomn</th>
+                        <th>column</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="text-capitalize">row 1</th>
+                        <td>cell 1</td>
+                        <td>cell 2</td>
+                        <td>cell 3</td>
+                    </tr>
+                    <tr>
+                        <th class="text-capitalize">row 2</th>
+                        <td>cell 1</td>
+                        <td>cell 2</td>
+                        <td>cell 3</td>
+                    </tr>
+                    <tr>
+                        <th class="text-capitalize">row 3</th>
+                        <td>cell 1</td>
+                        <td>cell 2</td>
+                        <td>cell 3</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th class="t-footer text-capitalize" colspan="4">table footer</th>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>
