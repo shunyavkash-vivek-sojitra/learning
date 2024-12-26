@@ -1,0 +1,42 @@
+table,
+th,
+td {
+  text-transform: capitalize;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  letter-spacing: 0.6px;
+  width: 30%;
+  border-collapse: collapse;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+caption {
+  padding: 0;
+  margin: 0.8rem 0 0.8rem 0;
+  font-size: 20px;
+}
+
+th {
+  background-color: rgba(192, 192, 192, 0.3);
+  border: 2px solid black;
+  font-weight: 600;
+}
+
+td {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  border: 1px solid black;
+}
+
+tfoot td {
+  border: 2px solid black;
+}
+
+.selected-col {
+  background-color: rgba(123, 104, 238, 0.3);
+}

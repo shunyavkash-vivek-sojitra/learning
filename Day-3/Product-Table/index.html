@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keyword" content="HTML,product table">
+    <meta name="description" content="Example of a product table implemented using HTML.">
+    <title>Product Table</title>
+    <link rel="stylesheet" href="./assets/styles/product-table.css">
+</head>
+
+<body>
+    <!-- main content -->
+    <main>
+        <!-- table section -->
+        <section>
+            <!-- product table -->
+            <table>
+                <caption>Product Table</caption>
+                <colgroup>
+                    <!-- first four columns selected -->
+                    <col />
+                    <col />
+                    <col />
+                    <col />
+                    <!-- last column selected -->
+                    <col span="1" class="selected-col" />
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>no</th>
+                        <th>name</th>
+                        <th>category</th>
+                        <th>price ($)</th>
+                        <th>in stock</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>1</th>
+                        <td>digital watch</td>
+                        <td>watch</td>
+                        <td>251</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <th>2</th>
+                        <td>yellow umbrella</td>
+                        <td>rain</td>
+                        <td>60</td>
+                        <td>15</td>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+                        <td>power handwash</td>
+                        <td>hygine</td>
+                        <td>20</td>
+                        <td>41</td>
+                    </tr>
+                    <tr>
+                        <th>4</th>
+                        <td>bass headphone</td>
+                        <td>technology</td>
+                        <td>360</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="4">total available product in-stock</th>
+                        <td>66</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>
