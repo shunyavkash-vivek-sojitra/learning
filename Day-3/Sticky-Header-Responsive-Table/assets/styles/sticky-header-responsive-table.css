@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+table,
+tr,
+th,
+td {
+  border: 3px solid lightblue;
+  border-collapse: collapse;
+  padding: 1rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+table {
+  width: 100%;
+  margin: 1rem 0 0 0;
+}
+
+caption {
+  color: lightslategray;
+  margin-bottom: 1rem;
+}
+
+.t-h-sticky {
+  position: relative;
+}
+
+.t-h-sticky .h-sticky {
+  position: sticky;
+  top: 0;
+}
+
+th,
+td {
+  border-radius: 8px;
+}
+
+th {
+  color: darkslategray;
+  font-weight: 600;
+  font-size: 17px;
+  background-color: rgb(32, 178, 170);
+}
+
+td {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+tr:nth-of-type(even) {
+  background-color: rgba(211, 211, 211, 0.3);
+}
+
+.t-title {
+  background-color: rgba(100, 149, 237, 0.5);
+}
+
+.index-color {
+  background-color: darkslategrey;
+  color: whitesmoke;
+}
+
+/* media */
+@media (max-width: 840px) {
+  table {
+    border: none;
+  }
+
+  .t-title {
+    display: block;
+  }
+
+  .t-heading {
+    display: block;
+  }
+
+  .t-heading-top {
+    display: none;
+  }
+
+  tr {
+    border-color: lightblue;
+    display: block;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  td {
+    text-align: start;
+    border: 1px solid lightblue;
+    display: grid;
+    grid-template-columns: 15ch auto;
+    gap: 0.5rem;
+  }
+
+  .m-b-sticky {
+    position: relative;
+  }
+
+  .b-sticky {
+    position: sticky;
+    top: 0;
+  }
+
+  .t-body:last-child {
+    margin-bottom: 1.5rem;
+  }
+
+  /* to select each rows in table [collection of siblings] - here it is "td" */
+  td:nth-of-type(1)::before {
+    content: "player: ";
+    font-weight: 700;
+  }
+  td:nth-of-type(2)::before {
+    content: "season: ";
+    font-weight: 700;
+  }
+  td:nth-of-type(3)::before {
+    content: "point: ";
+    font-weight: 700;
+  }
+  td:nth-of-type(4)::before {
+    content: "jersey number: ";
+    font-weight: 700;
+  }
+  td:nth-of-type(5)::before {
+    content: "teams: ";
+    font-weight: 700;
+  }
+  td:nth-of-type(6)::before {
+    content: "career: ";
+    font-weight: 700;
+  }
+}
