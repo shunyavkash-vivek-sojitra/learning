@@ -12,43 +12,54 @@
 
 <body>
     <!-- header -->
-    <header class="header-container div-center">
-        <!-- logo -->
-        <div class="logo-container">
-            <a href="#">
-                <img src="./assets/images/logo/aviation_logo-22.jpg" alt="logo">
-            </a>
-        </div>
+    <header class="header-container">
+        <div class="container mw-100 justify-between">
+            <!-- logo -->
+            <div class="logo-container">
+                <a href="#">
+                    <img src="./assets/images/logo/aviation_logo-22.jpg" alt="logo">
+                </a>
+            </div>
 
-        <!-- navigation -->
-        <nav class="nav-container">
-            <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">explore</a></li>
-                <li><a href="#">about</a></li>
-                <li><a href="#">contact us</a></li>
-            </ul>
-        </nav>
+            <!-- navigation -->
+            <nav class="nav-container">
+                <ul>
+                    <li><a href="#">home</a></li>
+                    <li><a href="#">explore</a></li>
+                    <li><a href="#">about</a></li>
+                    <li><a href="#">contact us</a></li>
+                </ul>
+            </nav>
 
-        <!-- search button -->
-        <div class="search-container">
-            <input type="text" placeholder="Explore here...">
-            <button type="button">Explore</button>
+            <!-- search button -->
+            <div class="search-container">
+                <input type="text" placeholder="Explore here...">
+                <button type="button">Explore</button>
+                <div class="toggle-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+                    </svg>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- main contenr -->
     <main class="container main-container div-center">
         <!-- hero section -->
-        <section class="hero-section">
-            <img src="./assets/images/hero-section/train-3758523_1920.jpg" alt="travel image">
+        <section class="hero-section p-top">
+            <div class="container">
+                <div class="img-wrapper">
+                    <img src="./assets/images/hero-section/train-3758523_1920.jpg" alt="travel image">
+                </div>
+            </div>
         </section>
 
         <!-- explore section -->
-        <section class="explore-section">
-            <h1>Travel - Explore - Enjoy</h1>
-            <div class="explore-container">
-                <article class="card-wrapper">
+        <section class="explore-section p-top">
+            <div class="container">
+                <h1>Travel - Explore - Enjoy</h1>
+                <div class="explore-container p-top">
                     <div class="card">
                         <img src="./assets/images/city/SightSeeing9M4CeU.jpg" alt="kashmir">
                         <div class="card-body">
@@ -56,8 +67,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ad doloribus ipsam ipsa laudantium, nam quis dolor recusandae aut molestias.</p>
                         </div>
                     </div>
-                </article>
-                <article class="card-wrapper">
                     <div class="card">
                         <img src="./assets/images/city/SightSeeingbGuteJ.jpg" alt="udaipur">
                         <div class="card-body">
@@ -65,8 +74,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ad doloribus ipsam ipsa laudantium, nam quis dolor recusandae aut molestias.</p>
                         </div>
                     </div>
-                </article>
-                <article class="card-wrapper">
                     <div class="card">
                         <img src="./assets/images/city/SightSeeingPiqPKW.jpg" alt="lakshadweep">
                         <div class="card-body">
@@ -74,8 +81,6 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ad doloribus ipsam ipsa laudantium, nam quis dolor recusandae aut molestias.</p>
                         </div>
                     </div>
-                </article>
-                <article class="card-wrapper">
                     <div class="card">
                         <img src="./assets/images/city/SightSeeingSRoXo4.jpg" alt="kerla">
                         <div class="card-body">
@@ -83,45 +88,47 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse ad doloribus ipsam ipsa laudantium, nam quis dolor recusandae aut molestias.</p>
                         </div>
                     </div>
-                </article>
+                </div>
             </div>
         </section>
     </main>
 
     <!-- footer -->
-    <footer class="footer-wrapper container div-center">
-        <address class="copyright-wrapper">
+    <footer class="footer-wrapper div-center p-top">
+        <div class="container">
             <div class="footer-list">
-                <ul>
+                <ul class="service-wrapper">
                     <li><a href="">flight</a></li>
                     <li><a href="">bus</a></li>
                     <li><a href="">flight status</a></li>
                     <li><a href="">check <span class="text-capital">PNR</span> status</a></li>
                     <li><a href="">corporate travel</a></li>
                 </ul>
-                <ul>
+                <ul class="service-wrapper">
                     <li><a href="">hotels</a></li>
                     <li><a href="">cabs</a></li>
                     <li><a href="">airlines</a></li>
                     <li><a href=""><span class="text-capital">EMT PRO</span></a></li>
                     <li><a href="">blog</a></li>
                 </ul>
-                <ul>
+                <ul class="service-wrapper">
                     <li><a href="">trains</a></li>
                     <li><a href="">cruise</a></li>
                     <li><a href="">airport</a></li>
                     <li><a href="">activities</a></li>
                     <li><a href="">flight check-in</a></li>
                 </ul>
-                <ul>
+                <ul class="service-wrapper">
                     <li><a href="">holidays</a></li>
                     <li><a href="">carters</a></li>
                     <li><a href="">travel guides</a></li>
                     <li><a href="">travel updates</a></li>
                 </ul>
             </div>
-            <p>&copy; Copyright Reserved. Travel Go. </p>
-        </address>
+            <div class="copyright-wrapper p-top">
+                <p>&copy; Copyright Reserved. Travel Go. </p>
+            </div>
+        </div>
     </footer>
 </body>
 
