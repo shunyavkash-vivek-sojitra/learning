@@ -1,36 +1,50 @@
 * {
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-ul,
-li,
-button {
+ul {
   list-style: none;
   padding: 0;
 }
 
-a, button {
+img {
+  display: block;
+}
+
+a,
+button {
   text-decoration: none;
   color: #414141;
   cursor: pointer;
+  display: block;
 }
 
-.header-container {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: gainsboro;
-  padding: 0 30px 0 15px;
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 16px;
+  margin-left: auto;
+  margin-right: auto;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
 }
 
+header .container {
+  background-color: gainsboro;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px 0 15px;
+}
+
 .logo-container img {
-  width: 75px;
+  max-width: 75px;
   /* object-fit: cover; */
 }
 
@@ -43,6 +57,12 @@ a, button {
   gap: 1.5rem;
 }
 
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .search-container input {
   padding: 8px;
   border-top-left-radius: 10px;
@@ -53,4 +73,25 @@ a, button {
   padding: 8px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.toggle-wrapper svg {
+  display: none;
+  width: 26px;
+  color: #414141;
+}
+
+/* media */
+@media (max-width: 705px) {
+  nav {
+    display: none;
+  }
+  .search-container input,
+  .search-container button {
+    display: none;
+  }
+
+  .toggle-wrapper svg {
+    display: block;
+  }
 }
