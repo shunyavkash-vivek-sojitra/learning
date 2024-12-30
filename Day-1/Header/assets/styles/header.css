@@ -16,10 +16,14 @@ img {
 
 a,
 button {
-  text-decoration: none;
   color: #414141;
   cursor: pointer;
   display: block;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 12px;
 }
 
 .container {
