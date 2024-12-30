@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Form</title>
+  <link rel="stylesheet" href="./assets/styles/style.css">
+</head>
+
+<body>
+  <main>
+    <section>
+      <div class="container">
+        <div class="form-wrapper">
+          <!-- title -->
+          <div class="title">Register</div>
+          <!-- Form -->
+          <div class="content">
+            <form action="#" oninput="ectc.value = slider.value">
+              <!-- inputs filds -->
+              <div class="user-details">
+                <div class="row-1">
+                  <!-- first name -->
+                  <div class="input-box">
+                    <label class="details">First Name</label>
+                    <input type="text" placeholder="Enter your first name" min="3" required>
+                  </div>
+
+                  <!-- last name -->
+                  <div class="input-box">
+                    <label class="details">Last Name</label>
+                    <input type="text" placeholder="Enter your last name" min="3" required>
+                  </div>
+                </div>
+
+                <div class="row-2">
+                  <!-- contact -->
+                  <div class="input-box">
+                    <label class="details">Contact</label>
+                    <input type="number" placeholder="Enter your Contact" required>
+                  </div>
+
+                  <!-- email -->
+                  <div class="input-box">
+                    <label class="details">Email</label>
+                    <input type="email" placeholder="Enter your email" required>
+                  </div>
+                </div>
+
+                <!-- gender -->
+                <div class="input-box">
+                  <label class="details">Gender</label>
+                  <fieldset class="radio-group">
+                    <!-- male -->
+                    <div class="radio-wrapper">
+                      <input type="radio" class="details radio-btn" value="male" required>
+                      <span>male</span>
+                    </div>
+
+                    <!-- female -->
+                    <div class="radio-wrapper">
+                      <input type="radio" class="details radio-btn" value="female" required>
+                      <span>female</span>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <!-- technology -->
+                <div class="input-box">
+                  <label class="details">Technology</label>
+                  <fieldset class="checkbox-group">
+
+                    <!-- Frontend -->
+                    <div class="checkbox-wrapper">
+                      <input type="checkbox" class="details radio-btn" value="male" required>
+                      <span>Frontend Develompent</span>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="checkbox-wrapper">
+                      <input type="checkbox" class="details radio-btn" value="female" required>
+                      <span>Backend Development</span>
+                    </div>
+
+                    <!-- Full-Stack -->
+                    <div class="checkbox-wrapper">
+                      <input type="checkbox" class="details radio-btn" value="female" required>
+                      <span>Full-Stack Development</span>
+                    </div>
+                  </fieldset>
+                </div>
+
+                <!-- Expected CTC -->
+                <div class="input-box">
+                  <label class="details">Expected CTC</label>
+                  <!-- Value of ECTC  = Value of Slider-->
+                  <input type="range" id="slider" min="100000" max="1000000" step="50000" value="0" required>
+                  <p>Expected CTC : <output name="ectc" for="slider">100000</output> per annual</p>
+                </div>
+
+                <!-- Date of Joining -->
+                <div class="input-box">
+                  <label class="details">Date of Joining</label>
+                  <input type="datetime-local" placeholder="Enter your contact" class="datetime-color" required>
+                </div>
+
+                <!-- Address -->
+                <div class="input-box">
+                  <label class="details">Address</label>
+                  <textarea class="resize" placeholder="Enter your address" required></textarea>
+                </div>
+              </div>
+
+              <!-- button -->
+              <div class="button-wrapper">
+                <button type="submit" class="btn-submit">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
