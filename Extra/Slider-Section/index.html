@@ -76,14 +76,14 @@
             <div class="body-secondary-img">
               <img src="./assets/images/card-body-img/Screenshot 2025-01-07 203021.png" alt="SEO Law Firms" />
             </div>
-            <h2>SEO for Law Firms</h2>
-            <p>Crush search rankings. Attract cases like clockwork.</p>
-            <p>
+            <h2 class="m-top">SEO for Law Firms</h2>
+            <p class="m-top">Crush search rankings. Attract cases like clockwork.</p>
+            <p class="m-top">
               Let your competitors compete for scraps on page two while you
               dominate the top spots in Google Search Results. You'll be the
               name they can't ignore when clients are in need.
             </p>
-            <a href="#" class="cta">Check Our SEO Services</a>
+            <a href="#" class="cta m-top">Check Our SEO Services</a>
           </div>
         </div>
       </div>
@@ -97,6 +97,23 @@
       perPage: 6,
       gap: "1rem",
       rewind: true,
+      breakpoints: {
+        1087: {
+          perPage: 5,
+        },
+        912: {
+          perPage: 4,
+        },
+        740: {
+          perPage: 3,
+        },
+        540: {
+          perPage: 2,
+        },
+        370: {
+          perPage: 1,
+        },
+      },
     });
 
     splide.mount();
