@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width initial-scale=1.0" />
+  <title>Slider-Section</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
+  <link rel="stylesheet" href="./assets/styles/slider-sec.css" />
+</head>
+
+<body>
+  <!-- main content -->
+  <main>
+    <section class="slider-sec">
+      <div class="container">
+        <!-- title -->
+        <div class="title">
+          <h1>Our Legal <span>Marketing Arsenal</span></h1>
+        </div>
+
+        <!-- slider -->
+        <div id="slider" class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              <!-- tabs -->
+              <li class="splide__slide">
+                <div class="slide-icon">
+                  <img src="./assets/images/slide-icons/i-1.png" alt="Icon 1" />
+                </div>
+                <div class="slide-title">Websites that Win Cases</div>
+              </li>
+
+              <li class="splide__slide">
+                <div class="slide-icon">
+                  <img src="./assets/images/slide-icons/i-2.png" alt="Icon 2" />
+                </div>
+                <div class="slide-title">PPC that Pays Off</div>
+              </li>
+
+              <li class="splide__slide active">
+                <div class="slide-icon">
+                  <img src="./assets/images/slide-icons/i-3.png" alt="Icon 3" />
+                </div>
+                <div class="slide-title">SEO for Law Firms</div>
+              </li>
+
+              <li class="splide__slide">
+                <div class="slide-icon">
+                  <img src="./assets/images/slide-icons/i-4.png" alt="Icon 4" />
+                </div>
+                <div class="slide-title">Content that Counsels</div>
+              </li>
+
+              <li class="splide__slide">
+                <div class="slide-icon">
+                  <img src="./assets/images/slide-icons/i-5.png" alt="Icon 5" />
+                </div>
+                <div class="slide-title">Lead Generation Engine</div>
+              </li>
+
+              <li class="splide__slide">
+                <div class="slide-icon">
+                  <img src="./assets/images/slide-icons/i-6.png" alt="Icon 6" />
+                </div>
+                <div class="slide-title">Social Media Jury</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="content">
+          <div class="body-primary-img">
+            <img src="./assets/images/card-body-img/Screenshot 2025-01-07 202811.png" alt="SEO Growth" />
+          </div>
+          <div class="content-text">
+            <div class="body-secondary-img">
+              <img src="./assets/images/card-body-img/Screenshot 2025-01-07 203021.png" alt="SEO Law Firms" />
+            </div>
+            <h2>SEO for Law Firms</h2>
+            <p>Crush search rankings. Attract cases like clockwork.</p>
+            <p>
+              Let your competitors compete for scraps on page two while you
+              dominate the top spots in Google Search Results. You'll be the
+              name they can't ignore when clients are in need.
+            </p>
+            <a href="#" class="cta">Check Our SEO Services</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- script -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script>
+    var splide = new Splide("#slider", {
+      perPage: 6,
+      gap: "1rem",
+      rewind: true,
+    });
+
+    splide.mount();
+  </script>
+</body>
+
+</html>
