@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  /* it makes animating to height auto. */
+  interpolate-size: allow-keywords;
+}
+
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -150,11 +155,14 @@ section {
   flex-direction: column;
   row-gap: 18px;
 }
-.faq-card {
+/* details */
+details {
   background-color: rgba(251, 135, 7, 0.3);
-  padding: 30px;
+  padding: 15px;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  transition: all 1s ease;
 }
 .faq-card-body-wrap {
   padding: 18px;
@@ -162,7 +170,14 @@ section {
   border-radius: 12px;
   margin-top: 30px;
 }
+/* summary */
+summary::marker {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.8);
+}
 .r-faq-title {
+  padding: 15px;
+  cursor: pointer;
   font-size: 18px;
 }
 .r-faq-ans {
