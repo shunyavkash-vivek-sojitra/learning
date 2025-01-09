@@ -1,0 +1,84 @@
+/* global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* quick */
+.d-flex {
+  display: flex;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  padding: 30px;
+  margin-inline: auto;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* z-index */
+.title {
+  margin-bottom: 150px;
+  border-bottom: 2px solid gray;
+}
+.z-cards-wrap {
+  flex-direction: column;
+  position: relative;
+}
+.z-card {
+  align-items: baseline;
+  border: 1px solid white;
+}
+.c-1,
+.c-2,
+.c-3,
+.c-4,
+.c-5 {
+  position: absolute;
+  color: white;
+  align-items: end;
+  padding: 8px;
+}
+.c-1 {
+  width: 550px;
+  height: 650px;
+  background-color: black;
+  /* change the z-index here to see the difference. */
+  /* z-index: ; */
+}
+.c-2 {
+  width: 450px;
+  height: 550px;
+  background-color: darkviolet;
+  z-index: 0;
+  left: -40px;
+  top: -40px;
+}
+.c-3 {
+  width: 350px;
+  height: 450px;
+  background-color: darkred;
+  z-index: 1;
+  left: -60px;
+  top: -60px;
+}
+.c-4 {
+  width: 250px;
+  height: 350px;
+  background-color: red;
+  z-index: 2;
+  left: -80px;
+  top: -80px;
+}
+.c-5 {
+  width: 150px;
+  height: 250px;
+  background-color: lightcoral;
+  z-index: 3;
+  left: -100px;
+  top: -100px;
+}
