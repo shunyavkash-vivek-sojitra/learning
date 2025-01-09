@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo_Class-Element</title>
+    <link rel="stylesheet" href="./assets/styles/pseudo.css">
+</head>
+
+<body>
+    <!-- main content -->
+    <main>
+        <section>
+            <div class="container d-flex">
+                <div class="element-wrapper">
+                    <h3>All Types:</h3>
+                    <!-- all type -->
+                    <!-- first-child -->
+                    <div class="element d-flex m-top">
+                        <h4 class="w-50 f-child">first-child</h4>
+                        <div class="parent d-flex w-50">
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                        </div>
+                    </div>
+                    <!-- last-child -->
+                    <div class="element d-flex m-top">
+                        <h4 class="w-50 l-child">last-child</h4>
+                        <div class="parent d-flex w-50">
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                        </div>
+                    </div>
+                    <!-- nth-child -->
+                    <div class="element d-flex m-top">
+                        <h4 class="w-50 n-child">nth-child - (2)</h4>
+                        <div class="parent d-flex w-50">
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                        </div>
+                    </div>
+                    <!-- nth-last-child -->
+                    <div class="element d-flex m-top">
+                        <h4 class="w-50 n-l-child">nth-last-child - (2)</h4>
+                        <div class="parent d-flex w-50">
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                            <div class="child"></div>
+                        </div>
+                    </div>
+                    <!-- specific type -->
+                    <h3 class="m-top">Specific Types:</h3>
+                    <!-- first-of-type -->
+                    <div class="element d-flex m-top">
+                        <h4 class="w-50 f-type">first-of-type</h4>
+                        <div class="parent d-flex w-50">
+                            <div class="child child-select">div</div>
+                            <div class="child child-select">div</div>
+                            <div class="child child-select">div</div>
+                            <p class="child child-select">p</p>
+                            <p class="child child-select">p</p>
+                        </div>
+                    </div>
+                    <!-- last-of-type -->
+                    <div class="element d-flex m-top">
+                        <h4 class="w-50 l-type">last-of-type</h4>
+                        <div class="parent d-flex w-50">
+                            <div class="child child-select">div</div>
+                            <p class="child child-select">p</p>
+                            <p class="child child-select">p</p>
+                            <div class="child child-select">div</div>
+                            <div class="child child-select">div</div>
+                        </div>
+                    </div>
+                    <!-- nth-child -->
+                    <div class="element d-flex m-top">
+                        <h4 class="w-50 n-type">nth-of-type - (odd)</h4>
+                        <div class="parent d-flex w-50">
+                            <div class="child child-select">div</div>
+                            <div class="child child-select">div</div>
+                            <p class="child child-select">p</p>
+                            <p class="child child-select">p</p>
+                            <div class="child child-select">div</div>
+                        </div>
+                    </div>
+                    <!-- nth-last-child -->
+                    <div class="element d-flex m-top">
+                        <h4 class="w-50 n-l-type">nth-last-of-type - (3n)</h4>
+                        <div class="parent d-flex w-50">
+                            <div class="child child-select">p</div>
+                            <div class="child  child-select">div</div>
+                            <div class="child child-select">div</div>
+                            <p class="child child-select">p</p>
+                            <div class="child child-select">div</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

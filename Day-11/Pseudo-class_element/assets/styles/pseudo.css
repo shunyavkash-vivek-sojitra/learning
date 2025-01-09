@@ -1,0 +1,122 @@
+/* global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  font-size: 14px;
+  white-space: nowrap;
+  color: white;
+  background-color: #d8bfd8;
+}
+
+/* quick */
+.d-flex {
+  display: flex;
+}
+.w-50 {
+  width: 50%;
+}
+.m-top {
+  margin-top: 20px;
+}
+.custom-padding {
+  padding: 18px;
+}
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 30px;
+  margin-inline: auto;
+  height: 100%;
+}
+
+/* Pseudo Class-Element */
+.element-wrapper {
+  width: 60%;
+  justify-content: center;
+  margin-inline: auto;
+  background-color: #414141;
+  height: 100%;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.element {
+  flex-direction: row;
+  column-gap: 18px;
+}
+
+.element h4 {
+  text-align: end;
+  padding: 16px;
+  color: whitesmoke;
+  border: 2px solid #feb30e;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+/* parent */
+.parent {
+  justify-content: flex-end;
+  column-gap: 15px;
+}
+/* child */
+.child {
+  padding: 25px;
+  border: 2px solid #d8bfd8;
+  background-color: transparent;
+  border-radius: 8px;
+  transition: all 0.4s ease;
+}
+.child-select {
+  padding: 16px;
+}
+/* hover */
+.element h4:hover {
+  color: #feb30e;
+}
+/* All Types */
+.f-child:hover + .parent .child:first-child {
+  border: 2px solid #feb30e;
+  background-color: #feb30e;
+}
+.l-child:hover + .parent .child:last-child {
+  border: 2px solid #feb30e;
+  background-color: #feb30e;
+}
+.n-child:hover + .parent .child:nth-child(2) {
+  border: 2px solid #feb30e;
+  background-color: #feb30e;
+}
+.n-l-child:hover + .parent .child:nth-last-child(2) {
+  border: 2px solid #feb30e;
+  background-color: #feb30e;
+}
+/* Specific Types */
+.f-type:hover + .parent .child-select:first-of-type {
+  border: 2px solid #0efe62;
+  background-color: #0efe62;
+  color: black;
+}
+.l-type:hover + .parent .child-select:last-of-type {
+  border: 2px solid #0efe62;
+  background-color: #0efe62;
+  color: black;
+}
+.n-type:hover + .parent .child-select:nth-of-type(odd) {
+  border: 2px solid #0efe62;
+  background-color: #0efe62;
+  color: black;
+}
+.n-l-type:hover + .parent .child-select:nth-last-of-type(3n) {
+  border: 2px solid #0efe62;
+  background-color: #0efe62;
+  color: black;
+}
