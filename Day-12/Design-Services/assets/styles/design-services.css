@@ -195,10 +195,9 @@ ul {
   width: max-content;
   margin-inline: auto;
   padding: 8px 1px;
-  transition: all 0.3s ease;
   border-width: 0;
-  transition: all 0.3s ease;
   position: relative;
+  transition: all 0.3s ease;
 }
 .design-card a::after {
   position: absolute;
@@ -208,12 +207,10 @@ ul {
   width: 0%;
   height: 2px;
   background-color: rgb(214, 74, 80);
-  /* transform: scaleX(0); */
   transition: all 0.4s ease;
 }
 .design-card a:hover::after {
   width: 100%;
-  /* transform: scaleX(1); */
 }
 
 .design-card h2,
