@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 :root {
-  --bg-dark: rgb(42, 45, 51);
+  --bg-dark: ;
   --bg-light: rgb(255, 255, 255);
   --font-dark: rgb(42, 45, 51);
   --font-light: rgb(255, 255, 255);
@@ -15,7 +15,28 @@
   --font-desc: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 body {
-  background-color: var(--bg-dark);
+  /* background-color: var(--bg-dark); */
+  background: hsla(220, 10%, 18%, 1);
+
+  background: linear-gradient(
+    270deg,
+    hsla(220, 10%, 18%, 1) 10%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    270deg,
+    hsla(220, 10%, 18%, 1) 10%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    270deg,
+    hsla(220, 10%, 18%, 1) 10%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#2A2D33", endColorstr="#FFFFFF", GradientType=1 );
 }
 a,
 img {
@@ -119,7 +140,7 @@ a {
 }
 .visit-again h3 {
   font-family: var(--font-title);
-  color: var(--font-light);
+  color: var(--font-dark);
   font-size: 20px;
   letter-spacing: 1px;
 }
