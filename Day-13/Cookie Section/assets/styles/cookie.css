@@ -31,6 +31,7 @@ body {
   letter-spacing: 0.5;
   outline: none;
 }
+
 /* default */
 a,
 button,
@@ -47,6 +48,17 @@ button {
 }
 ul {
   list-style: none;
+}
+h1 {
+  word-spacing: 3px;
+}
+h2 {
+  letter-spacing: 1.5px;
+  word-spacing: 3px;
+}
+h3 {
+  letter-spacing: 1.5px;
+  word-spacing: 3px;
 }
 
 /* quick */
