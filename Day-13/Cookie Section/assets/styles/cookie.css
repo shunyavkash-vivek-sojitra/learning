@@ -106,16 +106,20 @@ h3 {
 }
 /* avatar */
 .profile-wrap {
-  justify-items: center;
-  width: 100%;
-  height: 150px;
-  overflow: hidden;
-}
-.profile-wrap img {
+  justify-self: center;
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  overflow: hidden;
+}
+.profile-wrap img {
+  width: 100%;
+  height: auto;
   object-fit: cover;
+  transition: all 0.4s ease-in-out;
+}
+.profile-wrap img:hover {
+  transform: scale(1.2);
 }
 /* title */
 .l-top-wrap span {
