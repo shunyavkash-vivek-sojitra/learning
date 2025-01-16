@@ -1,0 +1,62 @@
+/* global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(75, 82, 91);
+  padding-bottom: 30px;
+}
+h1 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: rgb(75, 82, 91);
+  letter-spacing: 1px;
+  padding: 30px;
+  text-align: center;
+  font-size: 30px;
+  color: whitesmoke;
+}
+
+/* Animation */
+.animation-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 50%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+  background-color: whitesmoke;
+  border-radius: 25px;
+}
+.spinner {
+  width: 350px;
+  height: 350px;
+  position: relative;
+  background: conic-gradient(#3dffc9, #f7c723, #eb0ea5, #3dffc9);
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px;
+  animation: spin 3000ms linear infinite;
+}
+.spinner::after {
+  content: " ";
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 20px inset;
+  z-index: 1;
+  border-radius: 50%;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
