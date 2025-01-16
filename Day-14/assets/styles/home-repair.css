@@ -8,14 +8,16 @@
   --bg-dark: ;
   --bg-light: rgb(255, 255, 255);
   --font-dark: rgb(42, 45, 51);
+  --font-dark-subtle: rgba(42, 45, 51, 0.6);
   --font-light: rgb(255, 255, 255);
+  --font-light-subtle: rgba(255, 255, 255, 0.6);
   --border-color: rgb(255, 202, 3);
+  --hover-color: rgb(3, 255, 53);
   --font-title: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   --font-card-heading: ;
   --font-desc: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 body {
-  /* background-color: var(--bg-dark); */
   background: hsla(220, 10%, 18%, 1);
 
   background: linear-gradient(
@@ -88,7 +90,7 @@ a {
   width: 100%;
   max-width: 1140px;
   grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+  gap: 30px;
   min-height: 467px;
   justify-content: center;
   justify-items: center;
@@ -100,6 +102,11 @@ a {
   padding: 20px;
   border-radius: 20px;
   max-width: min-content;
+  transition: all 0.4s ease;
+}
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 25px;
 }
 /* profile */
 .service-profile-wrap {
@@ -116,6 +123,10 @@ a {
   object-fit: cover;
   border-radius: 50%;
   border: 9px solid var(--border-color);
+  transition: all 0.4s ease;
+}
+.card:hover .service-profile-wrap img {
+  border: 9px solid rgb(3, 255, 53);
 }
 .card h2 {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -124,6 +135,30 @@ a {
   color: var(--font-dark);
   letter-spacing: 1.5px;
   margin-top: 20px;
+}
+.card h2 a {
+  position: relative;
+  padding: 16px;
+  text-align: center;
+  margin-inline: auto;
+  transition: all 0.4s ease;
+}
+.card h2 a::after {
+  position: absolute;
+  content: " ";
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--hover-color);
+  transition: all 0.4s ease-in-out;
+}
+.card h2 a:hover {
+  color: var(--font-dark-subtle);
+}
+.card:hover h2 a::after {
+  width: 100%;
 }
 .card p {
   line-height: 1.5;
