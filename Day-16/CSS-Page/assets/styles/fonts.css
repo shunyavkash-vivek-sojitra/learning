@@ -1,0 +1,46 @@
+/* Syne FontFace */
+/* Add by using this in body - font-family: 'Syne', sans-serif; */
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne/Syne-ExtraBold.woff2") format("woff2"),
+    url("../fonts/Syne/Syne-ExtraBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne/Syne-SemiBold.woff2") format("woff2"),
+    url("../fonts/Syne/Syne-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne/Syne-Medium.woff2") format("woff2"),
+    url("../fonts/Syne/Syne-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne/Syne-Regular.woff2") format("woff2"),
+    url("../fonts/Syne/Syne-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne/Syne-Bold.woff2") format("woff2"),
+    url("../fonts/Syne/Syne-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
