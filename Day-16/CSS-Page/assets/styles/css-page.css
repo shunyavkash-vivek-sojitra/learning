@@ -449,6 +449,8 @@ nav ul li a:hover::after {
   .tags-wrap {
     margin-top: 8px;
     margin-left: 0;
+    max-width: 100%;
+    overflow-x: auto;
   }
   /* other */
   .hero-other-wrap h3 {
