@@ -53,6 +53,7 @@ console.log("symbol: ", symbolType2);
 console.log(" ");
 let bigIntType = BigInt(29999999999999999); // bigint
 console.log("bigint: ", bigIntType);
+console.log("bigint-type: ", typeof bigIntType);
 
 console.log(" ");
 let booleanTypeTrue = true;
