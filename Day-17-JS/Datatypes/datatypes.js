@@ -5,7 +5,7 @@ console.log("VAR DATATYPE:");
 console.log("var a =  ", a);
 
 // declaration
-var a; // undefined but declared
+var a; // declared but undefined
 a = 2; // var a initialized
 console.log("var a = ", a);
 
@@ -16,7 +16,7 @@ console.log("LET DATATYPE:");
 // console.log("let b = ", b);
 
 // declaration
-let b; // undefined but declared
+let b; // declared but undefined
 b = 11; // initialized
 console.log("let b = ", b);
 
@@ -56,7 +56,7 @@ console.log("bigint: ", bigIntType);
 console.log("bigint-type: ", typeof bigIntType);
 
 console.log(" ");
-let booleanTypeTrue = true;
+let booleanTypeTrue = true; // boolean
 let booleanTypeFalse = false;
 console.log("boolean: ", booleanTypeTrue);
 console.log("boolean: ", booleanTypeFalse);
