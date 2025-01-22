@@ -1,3 +1,10 @@
+/*
+  USECASES:
+  1. "age" must 18 or above.
+  2. "role" must be "student" in string.
+  3. "hasId" must boolean type [in this it must true].
+*/
+
 let age = 18;
 let role = "student";
 let hasId = true; // hasId must "boolean" typed for this.
