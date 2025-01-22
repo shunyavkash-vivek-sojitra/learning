@@ -57,3 +57,17 @@ if (!isNaN(age) && age > 0) {
 } else {
   console.log("Please, enter valid number!!");
 }
+
+// (?:) Ternary Operator
+console.log("\nUsing (?:) Ternary Operator:");
+!isNaN(age) && age > 0
+  ? age >= 0 && age <= 12 // condition
+    ? console.log("You are living as a child.")
+    : age >= 13 && age <= 19 // condition
+    ? console.log("You are a growing teenager.")
+    : age >= 20 && age <= 59 // condition
+    ? console.log("You are an adult now.")
+    : age >= 60 // condition
+    ? console.log("You are now a sinior, enjoy your rest of the life.")
+    : console.log("Please, enter valid age!!")
+  : console.log("Please, enter valid number!!");
