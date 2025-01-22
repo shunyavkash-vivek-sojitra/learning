@@ -241,6 +241,7 @@ nav ul li a:hover::after {
 .hero-section {
   color: var(--text-light);
   margin-top: 50px;
+  padding-bottom: 124px;
 }
 /* tags */
 .hero-tags-wrap {
@@ -475,5 +476,26 @@ nav ul li a:hover::after {
   /* other */
   .hero-other-wrap h3 {
     font-size: 18px;
+  }
+}
+
+.marquee-wrap {
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-dark);
+  margin-bottom: 32px;
+  gap: 100px;
+  overflow: hidden;
+  animation: scroll-x 10000ms linear infinite;
+}
+.marquee-wrap img {
+  height: 36px;
+}
+@keyframes scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
