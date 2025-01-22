@@ -69,3 +69,10 @@ console.log(`parseInt("abc123"): `, parseInt("abc123"));
 
 console.log(" ");
 console.log(`parseFloat("3.14abc"): `, parseFloat("3.14abc"));
+
+console.log(" ");
+console.log(`Array:`, typeof Array);
+
+console.log(" ");
+let arrayCustom = [];
+console.log(`arrayCustom:`, typeof arrayCustom);
