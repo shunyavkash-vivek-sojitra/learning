@@ -17,6 +17,8 @@ const verifyAge = () => {
     );
   } catch (error) {
     console.error(error.message);
+  } finally {
+    console.log("\nAge is varified successfully.");
   }
 };
 
