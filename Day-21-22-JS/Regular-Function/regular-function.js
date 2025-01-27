@@ -7,10 +7,10 @@ let age = 18;
 
 function verifyAge(age) {
   if (age >= 18) {
-    console.log("Welcome, you are eligible for voating, Your AGE: ", age);
+    console.log("Welcome, you are eligible for voting, Your AGE: ", age);
   } else {
     console.log(
-      `Your age:${age} does not meet the minimum age criteria for voating!!`
+      `Your age:${age} does not meet the minimum age criteria for voting!!`
     );
   }
 }
