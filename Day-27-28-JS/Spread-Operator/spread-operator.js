@@ -1,4 +1,5 @@
 // Spread Operator
+console.log("ARRAY:");
 const arrayNumeric = [1, 2, 3, 4, 5];
 console.log("Numaric Array: ", arrayNumeric);
 const arrayAplhabet = ["six", "seven", "eight", "nine", "ten"];
@@ -25,3 +26,25 @@ console.log("ArrayAlphaNumeric_second Array: ", arrayAlphaNumeric_second);
 // it will create a new array of including "arrayNumeric" and "arrayAlphabet".
 const array = [arrayNumeric, arrayAplhabet];
 console.log("\nNew Array: ", array);
+
+console.log(
+  "\n=================================================================\n"
+);
+
+console.log("OBJECT: ");
+const obj_name = {
+  name: "Vivek",
+};
+const obj_email = {
+  email: "vivek@gmail.com",
+};
+console.log("\nobj_name: ", obj_name);
+console.log("obj_email: ", obj_email);
+
+// In "obj_merged_nested" both objects are considered as a nested object.
+const obj_merged_nested = { obj_name, obj_email };
+console.log("\nMerged Nested Object: ", obj_merged_nested);
+
+// Spread - it considered a whole object as a single object.
+const obj_merged = { ...obj_name, ...obj_email };
+console.log("\nMerged Object: ", obj_merged);
