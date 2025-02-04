@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <div class="row d-grid">
+                    <!-- form -->
+                    <div class="col">
+                        <form method="post" class="d-flex" onsubmit="todoCreated()">
+                            <div class="todo-input-wrap d-flex">
+                                <input type="text" id="todo-input" placeholder="Create Todo..." autocomplete="off">
+                                <textarea name="" rows="2" id="todo-text-area" placeholder="Description..."></textarea>
+                                <button type="submit">Create</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Todo Table -->
+                    <div class="col">
+                        <div class="todos-wrap d-flex">
+                            <ul id="todoDisplay"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./service/service.js"></script>
+</body>
+
+</html>
