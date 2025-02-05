@@ -47,8 +47,16 @@ ul li a {
   grid-auto-flow: column;
   grid-template-columns: repeat(2, 1fr);
 }
-input,
-textarea {
+@media (max-width: 1024px) {
+  .row {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+  }
+}
+.col {
+  padding-inline: 8px;
+}
+input {
   font-size: 14px;
   color: rgb(67, 55, 77);
   background-color: transparent;
@@ -59,12 +67,10 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.3);
   caret-color: #43374d;
 }
-input::placeholder,
-textarea::placeholder {
+input::placeholder {
   color: rgba(67, 55, 77, 0.8);
 }
 input,
-textarea,
 button {
   letter-spacing: 1px;
   border-radius: 12px;
@@ -74,6 +80,23 @@ form {
   height: 100dvh;
   align-items: center;
 }
+@media (max-width: 1024px) {
+  form {
+    padding: 30px 0;
+    height: max-content;
+    align-items: center;
+  }
+}
+.text-elepse {
+  display: -webkit-box;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: wrap;
+}
+/* Main Content */
 .todo-input-wrap {
   gap: 18px;
   margin-inline: auto;
@@ -104,8 +127,9 @@ form {
 /* ================================================= */
 /* Todo Table */
 .todos-wrap {
-  height: 100dvh;
+  height: max-content;
   align-items: center;
+  border-radius: 12px;
   background-color: rgba(255, 255, 255);
   overflow: hidden;
 }
@@ -120,6 +144,7 @@ form {
   align-items: center;
 }
 .todos-wrap ul li {
+  text-transform: capitalize;
   width: 100%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background-color: #5f4093;
@@ -136,6 +161,15 @@ form {
 }
 .todos-wrap ul li .todo-flex-wrap:first-child {
   min-width: 30%;
+}
+.todo-title {
+  letter-spacing: 1.5px;
+  font-weight: 400;
+}
+.todo-not-fount {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 28px;
+  color: #5f4093;
 }
 .todo-flex-wrap button {
   font-weight: 600;
