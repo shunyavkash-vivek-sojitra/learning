@@ -22,13 +22,17 @@
                                     <h1 class="date" id="date"></h1>
                                 </div>
                                 <input type="text" id="todo-input" placeholder="Create Todo..." autocomplete="off">
-                                <button type="submit" class="btnSubmit" id="btnSubmit">Create</button>
+                                <div class="btn-wrapper d-flex">
+                                    <button type="submit" class="btnSubmit" id="btnSubmit">Create</button>
+                                    <button type="button" class="btnUpdate" id="btnUpdate">Save</button>
+                                </div>
                             </div>
                         </form>
                     </div>
                     <!-- Todo Table -->
                     <div class="col">
                         <div class="todos-wrap d-flex">
+                            <!-- Todos goes here -->
                             <ul id="todoDisplay"></ul>
                         </div>
                     </div>

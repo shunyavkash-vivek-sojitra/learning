@@ -116,6 +116,13 @@ form {
   font-size: 16px;
 }
 /* button */
+.btn-wrapper {
+  position: relative;
+  flex-direction: column;
+  gap: 18px;
+  height: 45px;
+  overflow: hidden;
+}
 .todo-input-wrap button {
   cursor: pointer;
   width: max-content;
@@ -131,13 +138,25 @@ form {
   background-color: #43374d;
   border: 2px solid rgb(247, 135, 0);
 }
+.btnSubmit {
+  opacity: 1;
+}
+.btnUpdate {
+  top: 50px;
+  position: absolute;
+  opacity: 1;
+}
 /* ================================================= */
 /* Todo Table */
+.row .col:last-child {
+  padding: 30px 0;
+}
 .todos-wrap {
-  height: 100dvh;
+  height: 100%;
   align-items: center;
   border-radius: 12px;
   background-color: rgba(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   overflow: hidden;
 }
 @media (max-width: 1024px) {
@@ -196,12 +215,26 @@ form {
   border-radius: 0;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  background-color: rgba(255, 254, 253, 0.8);
+  color: #43374d;
+}
+.todo-flex-wrap {
+  gap: 8px;
 }
 .todo-flex-wrap button:hover {
   color: red;
   background-color: rgba(255, 254, 253, 0.8);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 15px 1px;
+}
+.todo-flex-wrap .btnEdit {
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fffefd;
+}
+.todo-flex-wrap .btnEdit:hover {
+  color: #f78700b3;
 }
 .todo-flex-wrap button i {
-  font-size: 16px;
+  font-size: 18px;
 }

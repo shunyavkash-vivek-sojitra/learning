@@ -1,6 +1,7 @@
 let todoDisplay = document.querySelector("#todoDisplay");
 let todoInput = document.querySelector("#todo-input");
 let btnSubmit = document.querySelector("#btnSubmit");
+let btnUpdate = document.querySelector("#btnUpdate");
 let date = document.querySelector("#date");
 
 // Date
@@ -50,19 +51,65 @@ const todoDisplayed = () => {
     ? (todoDisplay.innerHTML = `<h4 class="todo-not-fount">No Todos Found</h4>`)
     : todos.forEach((todo) => {
         todoDisplay.innerHTML += `<li>
-                                  <div class="todo-flex-wrap">
-                                      <h4 class="todo-title text-elepse">${todo}</h4>
-                                  </div>
-                                  <div class="todo-flex-wrap" id="todo-flex-wrap">
-                                      <button class="btnDelete">
-                                         <i class="fa-solid fa-xmark"></i>
-                                      </button>
-                                  </div>
-                              </li>`;
+                                    <div class="todo-flex-wrap">
+                                        <h4 class="todo-title text-elepse">${todo}</h4>
+                                    </div>
+                                    <div class="todo-flex-wrap d-flex" id="todo-flex-wrap">
+                                        <button class="btnEdit">
+                                            <i class="fa-solid fa-square-pen"></i>
+                                        </button>
+                                        <button class="btnDelete">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+                                </li>`;
       });
 };
+
 // call todoDisplay
 todoDisplayed();
+
+console.log(btnUpdate.dataset);
+
+// ====================================================== Edit/Update Todo
+let editTodo = (e) => {
+  const selectTodo = e.target.closest("li");
+
+  const todoText = selectTodo.querySelector(".todo-title").textContent.trim();
+  todoInput.value = todoText;
+
+  // Index Found
+  let findIndex = todos.indexOf(todoText);
+
+  // css
+  if (findIndex !== -1) {
+    btnUpdate.dataset.index = findIndex;
+    btnSubmit.style.opacity = 0;
+    btnUpdate.style.top = 0;
+    btnUpdate.style.opacity = 1;
+  }
+};
+
+// update
+let updateTodo = () => {
+  let index = btnUpdate.dataset.index;
+  let newData = todoInput.value;
+
+  if (index !== undefined && index !== "" && newData !== "") {
+    index = JSON.parse(index);
+    todos[index] = newData;
+    setTodos("Todo", todos);
+    todoDisplayed();
+
+    // index of newData in todos[]
+    btnUpdate.removeAttribute("data-index");
+    todoInput.value = "";
+  }
+};
+
+btnUpdate.addEventListener("click", (e) => {
+  updateTodo();
+});
 
 // ====================================================== Delete Todo
 let deleteTodo = (e) => {
@@ -82,5 +129,12 @@ let deleteTodo = (e) => {
 todoDisplay.addEventListener("click", (e) => {
   if (e.target.closest(".btnDelete")) {
     deleteTodo(e);
+  }
+});
+
+// toEditTodo
+todoDisplay.addEventListener("click", (e) => {
+  if (e.target.closest(".btnEdit")) {
+    editTodo(e);
   }
 });
