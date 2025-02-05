@@ -7,6 +7,7 @@
 }
 body {
   background-color: #fff1ff;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 /* default */
@@ -76,6 +77,10 @@ button {
   border-radius: 12px;
 }
 /* todo */
+.date {
+  font-size: 16px;
+  color: #43374d;
+}
 form {
   height: 100dvh;
   align-items: center;
@@ -116,6 +121,7 @@ form {
   width: max-content;
   padding: 10px 24px;
   background-color: #5f4093;
+  border: 2px solid transparent;
   color: #fffefd;
   font-weight: 600;
   transition: all 0.4s ease;
@@ -123,15 +129,21 @@ form {
 .todo-input-wrap button:hover {
   color: #fffefd;
   background-color: #43374d;
+  border: 2px solid rgb(247, 135, 0);
 }
 /* ================================================= */
 /* Todo Table */
 .todos-wrap {
-  height: max-content;
+  height: 100dvh;
   align-items: center;
   border-radius: 12px;
   background-color: rgba(255, 255, 255);
   overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .todos-wrap {
+    height: max-content;
+  }
 }
 .todos-wrap ul {
   display: flex;
@@ -146,8 +158,9 @@ form {
 .todos-wrap ul li {
   text-transform: capitalize;
   width: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: #5f4093;
+  background: rgba(95, 64, 147, 0.8);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(95, 64, 147, 0.7);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -155,6 +168,7 @@ form {
   line-height: 1.4;
   color: #fffefd;
   border-radius: 10px;
+  overflow: hidden;
 }
 .todos-wrap ul li .todo-flex-wrap:first-child {
   min-width: 70%;
@@ -167,7 +181,6 @@ form {
   font-weight: 400;
 }
 .todo-not-fount {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 28px;
   color: #5f4093;
 }
@@ -177,7 +190,12 @@ form {
   background-color: transparent;
   border: 0px;
   color: #fffefd;
+  position: relative;
+  right: -20px;
   transition: all 0.4s ease;
+  border-radius: 0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 .todo-flex-wrap button:hover {
   color: red;

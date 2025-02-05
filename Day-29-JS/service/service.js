@@ -1,6 +1,12 @@
 let todoDisplay = document.querySelector("#todoDisplay");
 let todoInput = document.querySelector("#todo-input");
 let btnSubmit = document.querySelector("#btnSubmit");
+let date = document.querySelector("#date");
+
+// Date
+let getDate = new Date();
+let dateSeperated = getDate.toString().split(" ");
+date.innerHTML = `${dateSeperated[1]} / ${dateSeperated[2]} / ${dateSeperated[3]}`;
 
 const getTodos = () => {
   return JSON.parse(localStorage.getItem("Todo")) || [];
@@ -9,8 +15,6 @@ const getTodos = () => {
 const setTodos = (key, data) => {
   localStorage.setItem(key, JSON.stringify(data));
 };
-
-console.log("Get Todos: ", getTodos());
 
 let todos = [];
 todos = getTodos();
@@ -22,7 +26,7 @@ const todoCreated = () => {
 
   // fetching data from from
   const todoNew = todoInput.value.trim();
-  console.log("todoNew: ", todoNew);
+  if (!todoNew) return;
 
   //  pushed "todoNew{}" into array "todos[]"
   todos.push(todoNew);
@@ -63,16 +67,13 @@ todoDisplayed();
 // ====================================================== Delete Todo
 let deleteTodo = (e) => {
   const fetchTodo = e.target.closest("li");
-  console.log("fetched Todo: ", fetchTodo);
-  // if (!fetchTodo) return;
+  if (!fetchTodo) return;
 
   const todoText = fetchTodo.querySelector(".todo-title").textContent.trim();
-  console.log("todo text: ", todoText);
 
   const todoDeleted = todos.filter((currentTodo) => {
     return currentTodo !== todoText;
   });
-  console.log("updated Todos", todoDeleted);
   setTodos("Todo", todoDeleted);
   todoDisplayed();
 };
