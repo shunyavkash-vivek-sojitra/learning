@@ -3,7 +3,6 @@ let todoInput = document.querySelector("#todo-input");
 let btnSubmit = document.querySelector("#btnSubmit");
 let btnUpdate = document.querySelector("#btnUpdate");
 let date = document.querySelector("#date");
-let btnDelete = document.querySelector(".btnDelete");
 
 // Date
 let getDate = new Date();
@@ -83,6 +82,7 @@ let editTodo = (e) => {
 
   // Index Found
   let index = findIndex(todoText);
+  console.log(index);
 
   // css
   if (index !== -1) {
@@ -122,43 +122,32 @@ btnUpdate.addEventListener("click", (e) => {
 });
 
 // ====================================================== Delete Todo
+// same content issue is pending to be resolved.
 let deleteTodo = (e) => {
   const fetchTodo = e.target.closest("li");
   if (!fetchTodo) return;
 
+  const id = (fetchTodo.dataset.id = Math.random());
+
   const todoText = fetchTodo.querySelector(".todo-title").textContent.trim();
 
-  const index = todos.findIndex((todo) => {
-    return todo === todoText;
+  const todoDeleted = todos.filter((currentTodo) => {
+    return currentTodo !== todoText;
   });
-  console.log("index: ", index);
-
-  if (index !== -1) {
-    todos.splice(index, 1);
-  }
-  
-  // if (index !== -1) {
-  //   todos.splice(index, 1);
-  // }
-
-  // const todoDeleted = todos.filter((currentTodo) => {
-  //   return currentTodo !== todoText;
-  // });
-
-  setTodos("Todo", todos);
+  setTodos("Todo", todoDeleted);
   todoDisplayed();
 };
 
 // toDeleteTodo
 todoDisplay.addEventListener("click", (e) => {
-  if (e.target.closest(".btnDelete")) {
+  if (e.target.closest("#btnDelete")) {
     deleteTodo(e);
   }
 });
 
 // toEditTodo
 todoDisplay.addEventListener("click", (e) => {
-  if (e.target.closest(".btnEdit")) {
+  if (e.target.closest("#btnEdit")) {
     editTodo(e);
   }
 });
