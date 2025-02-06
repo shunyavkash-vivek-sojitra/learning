@@ -3,6 +3,7 @@ let todoInput = document.querySelector("#todo-input");
 let btnSubmit = document.querySelector("#btnSubmit");
 let btnUpdate = document.querySelector("#btnUpdate");
 let date = document.querySelector("#date");
+let btnDelete = document.querySelector(".btnDelete");
 
 // Date
 let getDate = new Date();
@@ -22,8 +23,8 @@ todos = getTodos();
 
 // ====================================================== Create Todo
 // to create new todo
-const todoCreated = () => {
-  event.preventDefault();
+const todoCreated = (e) => {
+  e.preventDefault();
 
   // fetching data from from
   const todoNew = todoInput.value.trim();
@@ -39,8 +40,8 @@ const todoCreated = () => {
 };
 
 // onSubmit
-btnSubmit.addEventListener("click", () => {
-  todoCreated();
+btnSubmit.addEventListener("click", (e) => {
+  todoCreated(e);
 });
 
 // ====================================================== Display Todo
@@ -55,10 +56,10 @@ const todoDisplayed = () => {
                                         <h4 class="todo-title text-elepse">${todo}</h4>
                                     </div>
                                     <div class="todo-flex-wrap d-flex" id="todo-flex-wrap">
-                                        <button class="btnEdit">
+                                        <button class="btnEdit" id="btnEdit">
                                             <i class="fa-solid fa-square-pen"></i>
                                         </button>
-                                        <button class="btnDelete">
+                                        <button class="btnDelete" id="btnDelete">
                                             <i class="fa-solid fa-xmark"></i>
                                         </button>
                                     </div>
@@ -69,7 +70,9 @@ const todoDisplayed = () => {
 // call todoDisplay
 todoDisplayed();
 
-console.log(btnUpdate.dataset);
+const findIndex = (data) => {
+  return todos.indexOf(data);
+};
 
 // ====================================================== Edit/Update Todo
 let editTodo = (e) => {
@@ -79,14 +82,18 @@ let editTodo = (e) => {
   todoInput.value = todoText;
 
   // Index Found
-  let findIndex = todos.indexOf(todoText);
+  let index = findIndex(todoText);
 
   // css
-  if (findIndex !== -1) {
-    btnUpdate.dataset.index = findIndex;
+  if (index !== -1) {
+    btnUpdate.dataset.index = index;
     btnSubmit.style.opacity = 0;
     btnUpdate.style.top = 0;
     btnUpdate.style.opacity = 1;
+    if (todoInput.value != "") {
+      btnDelete.style.display = "none";
+      btnEdit.style.display = "none";
+    }
   }
 };
 
@@ -104,6 +111,9 @@ let updateTodo = () => {
     // index of newData in todos[]
     btnUpdate.removeAttribute("data-index");
     todoInput.value = "";
+    btnSubmit.style.opacity = 1;
+    btnUpdate.style.top = "50px";
+    btnUpdate.style.opacity = 0;
   }
 };
 
@@ -118,10 +128,24 @@ let deleteTodo = (e) => {
 
   const todoText = fetchTodo.querySelector(".todo-title").textContent.trim();
 
-  const todoDeleted = todos.filter((currentTodo) => {
-    return currentTodo !== todoText;
+  const index = todos.findIndex((todo) => {
+    return todo === todoText;
   });
-  setTodos("Todo", todoDeleted);
+  console.log("index: ", index);
+
+  if (index !== -1) {
+    todos.splice(index, 1);
+  }
+  
+  // if (index !== -1) {
+  //   todos.splice(index, 1);
+  // }
+
+  // const todoDeleted = todos.filter((currentTodo) => {
+  //   return currentTodo !== todoText;
+  // });
+
+  setTodos("Todo", todos);
   todoDisplayed();
 };
 

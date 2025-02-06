@@ -177,6 +177,7 @@ form {
 .todos-wrap ul li {
   text-transform: capitalize;
   width: 100%;
+  min-height: 74px;
   background: rgba(95, 64, 147, 0.8);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 2px solid rgba(95, 64, 147, 0.7);
@@ -234,6 +235,9 @@ form {
 }
 .todo-flex-wrap .btnEdit:hover {
   color: #f78700b3;
+}
+.btnDelete {
+  opacity: 1;
 }
 .todo-flex-wrap button i {
   font-size: 18px;
