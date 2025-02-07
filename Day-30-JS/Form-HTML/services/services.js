@@ -1,5 +1,5 @@
 // form
-let input = document.querySelector("input");
+let input = document.querySelectorAll("input");
 
 // input wrap
 let inputWrap = document.querySelector(".input-wrap");
@@ -24,42 +24,93 @@ let eyeNotVisible = document.querySelector(".eyeNotVisible");
 // btnSubmit
 let btnSubmit = document.querySelector("#btnSubmit");
 
+// setData
+const setData = (dataContainer) => {
+  localStorage.setItem("User", JSON.stringify(dataContainer));
+};
+// getData
+const getData = () => {
+  return JSON.parse(localStorage.getItem("User"));
+};
+
 // validate username
 const validateUsername = () => {
   // rule
+  const userNameRegex = /[a-z][0-9]/g;
   const checkUserName = username.value;
-  if (checkUserName.length < 6) {
+  if (checkUserName === "") {
     usernameWrap.style.border = "1px solid rgb(252, 99, 107)";
     invalidUsername.style.opacity = 1;
-    invalidUsername.innerHTML = `* '${checkUserName}' must be of six characters long.`;
-  } else if (checkUserName.length >= 6) {
-    usernameWrap.style.border = "1px solid rgb(57, 161, 83)";
+    invalidUsername.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Username must required.`;
+  } else if (checkUserName.length < 6) {
+    usernameWrap.style.border = "1px solid rgb(252, 99, 107)";
     invalidUsername.style.opacity = 1;
+    invalidUsername.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Username must be of 6 characters long.`;
+  } else if (!userNameRegex.test(checkUserName)) {
+    usernameWrap.style.border = "1px solid rgb(252, 99, 107)";
+    invalidUsername.style.opacity = 1;
+    invalidUsername.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Username must be of numbers and lower characters.`;
+  } else {
+    usernameWrap.style.border = "1px solid rgb(57, 161, 83)";
+    invalidUsername.style.display = "none";
     invalidUsername.innerHTML = ``;
+  }
+};
+
+// validate email
+const validateEmail = () => {
+  const checkEmail = email.value;
+  const emailRegex =
+    /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/;
+
+  if (checkEmail === "") {
+    emailWrap.style.border = "1px solid rgb(252, 99, 107)";
+    invalidEmail.style.opacity = 1;
+    invalidEmail.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Email must required.`;
+  } else if (!emailRegex.test(checkEmail)) {
+    emailWrap.style.border = "1px solid rgb(252, 99, 107)";
+    invalidEmail.style.opacity = 1;
+    invalidEmail.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Email is invalid! Please ckeck your email.`;
+  } else {
+    emailWrap.style.border = "1px solid rgb(57, 161, 83)";
+    invalidEmail.style.display = "none";
+    invalidEmail.innerHTML = ``;
   }
 };
 
 // validate password
 const validatePassword = () => {
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
   // rule
   const checkPassword = password.value;
   if (checkPassword.length < 8) {
     passwordWrap.style.border = "1px solid rgb(252, 99, 107)";
     invalidPassword.style.opacity = 1;
-    invalidPassword.innerHTML = `* Password must be of eight characters long.`;
-  } else if (checkPassword.length > 8) {
-    passwordWrap.style.border = "1px solid rgb(57, 161, 83)";
+    invalidPassword.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Password must be of 8 characters long.`;
+  } else if (!passwordRegex.test(checkPassword)) {
+    passwordWrap.style.border = "1px solid rgb(252, 99, 107)";
     invalidPassword.style.opacity = 1;
+    invalidPassword.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Password must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number.`;
+  } else {
+    passwordWrap.style.border = "1px solid rgb(57, 161, 83)";
+    invalidPassword.style.display = "none";
     invalidPassword.innerHTML = ``;
   }
 };
 
-eyeVisible.addEventListener("click", () => {});
+eyeVisible.addEventListener("click", () => {
+  password.type = "password";
+  eyeNotVisible.style.opacity = 1;
+  eyeNotVisible.style.display = "block";
+  eyeVisible.style.opacity = 0;
+  eyeVisible.style.display = "none";
+});
 eyeNotVisible.addEventListener("click", () => {
   password.type = "text";
   eyeNotVisible.style.opacity = 0;
+  eyeNotVisible.style.display = "none";
   eyeVisible.style.opacity = 1;
-  console.log(password.type);
+  eyeVisible.style.display = "block";
 });
 
 // event calling
@@ -68,14 +119,30 @@ usernameWrap.addEventListener("input", () => {
   validateUsername();
 });
 // email-wrap
-emailWrap.addEventListener("input", () => {});
+emailWrap.addEventListener("input", () => {
+  validateEmail();
+});
 // password-wrap
 passwordWrap.addEventListener("input", () => {
   validatePassword();
 });
 
+// btnSubmit
 btnSubmit.addEventListener("click", (e) => {
   e.preventDefault();
-  validateUsername();
-  validatePassword();
+  let dataStack = getData() || [];
+  const userData = {};
+
+  Array.from(input).forEach((element) => {
+    if (element.value === "" && userData.value == null) {
+      return;
+    }
+    userData[element.name] = element.value;
+  });
+  console.log(Object.keys(userData));
+  if (Object.keys(userData) == 0) {
+    return;
+  }
+  dataStack.push(userData);
+  setData(dataStack);
 });

@@ -26,9 +26,6 @@
                 <a href="javascript:void(0);">Login</a>
               </li>
               <li class="text-cap">
-                <a href="javascript:void(0);">Register</a>
-              </li>
-              <li class="text-cap">
                 <a href="javascript:void(0);">About Us</a>
               </li>
               <li class="text-cap">
@@ -48,9 +45,6 @@
                 <ul class="d-flex">
                   <li class="text-cap">
                     <a href="javascript:void(0);">Login</a>
-                  </li>
-                  <li class="text-cap">
-                    <a href="javascript:void(0);">Register</a>
                   </li>
                   <li class="text-cap">
                     <a href="javascript:void(0);">About Us</a>
@@ -74,7 +68,7 @@
               <span>
                 <i class="fa-solid fa-user"></i>
               </span>
-              <input type="text" placeholder="username" id="username" class="text-low" />
+              <input type="text" placeholder="username" name="username" id="username" required />
             </div>
             <span class="invalidField" id="invalidUsername"></span>
 
@@ -83,7 +77,7 @@
               <span>
                 <i class="fa-solid fa-envelope"></i>
               </span>
-              <input type="email" placeholder="Email" id="email" />
+              <input type="email" placeholder="Email" name="email" id="email" />
             </div>
             <span class="invalidField" id="invalidEmail"></span>
 
@@ -92,7 +86,7 @@
               <span>
                 <i class="fa-solid fa-lock"></i>
               </span>
-              <input type="password" placeholder="Password" id="password" />
+              <input type="password" placeholder="Password" name="password" id="password" />
               <span class="showPassword">
                 <i class="fa-solid fa-eye eyeVisible"></i>
                 <i class="fa-solid fa-eye-slash eyeNotVisible"></i>
