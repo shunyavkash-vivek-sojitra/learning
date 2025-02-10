@@ -1,141 +1,166 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>- Dance Academy</title>
+    <link rel="stylesheet" href="./assets/styles/fonts.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./assets/styles/form.css" />
+  </head>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>- Dance Academy</title>
-  <link rel="stylesheet" href="./assets/styles/fonts.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="./assets/styles/form.css" />
-</head>
+  <body>
+    <main>
+      <section class="bg-main">
+        <header id="headerId">
+          <div class="header-wrap container d-flex">
+            <!-- logo -->
+            <div class="logo-wrap d-flex">
+              <img src="./assets/images/logo.png" alt="logo" />
+            </div>
 
-<body>
-  <main>
-    <section class="bg-main">
-      <header id="headerId">
-        <div class="header-wrap container d-flex">
-          <!-- logo -->
-          <div class="logo-wrap d-flex">
-            <img src="./assets/images/logo.png" alt="logo" />
-          </div>
+            <!-- nav -->
+            <nav>
+              <ul class="d-flex">
+                <li class="text-cap">
+                  <a href="javascript:void(0);" class="active">Login</a>
+                </li>
+                <li class="text-cap">
+                  <a href="javascript:void(0);">About Us</a>
+                </li>
+                <li class="text-cap">
+                  <a href="javascript:void(0);">Contact</a>
+                </li>
+              </ul>
+            </nav>
 
-          <!-- nav -->
-          <nav>
-            <ul class="d-flex">
-              <li class="text-cap">
-                <a href="javascript:void(0);">Login</a>
-              </li>
-              <li class="text-cap">
-                <a href="javascript:void(0);">About Us</a>
-              </li>
-              <li class="text-cap">
-                <a href="javascript:void(0);">Contact</a>
-              </li>
-            </ul>
-          </nav>
+            <!-- toggle-button -->
+            <div class="toggle-wrap d-flex">
+              <i class="fa-solid fa-bars"></i>
 
-          <!-- toggle-button -->
-          <div class="toggle-wrap d-flex">
-            <i class="fa-solid fa-bars"></i>
-
-            <!-- toggle-nav -->
-            <div class="toggle-nav">
-              <!-- nav -->
-              <nav>
-                <ul class="d-flex">
-                  <li class="text-cap">
-                    <a href="javascript:void(0);">Login</a>
-                  </li>
-                  <li class="text-cap">
-                    <a href="javascript:void(0);">About Us</a>
-                  </li>
-                  <li class="text-cap">
-                    <a href="javascript:void(0);">Contact</a>
-                  </li>
-                </ul>
-              </nav>
+              <!-- toggle-nav -->
+              <div class="toggle-nav">
+                <!-- nav -->
+                <nav>
+                  <ul class="d-flex">
+                    <li class="text-cap">
+                      <a href="javascript:void(0);" class="active">Login</a>
+                    </li>
+                    <li class="text-cap">
+                      <a href="javascript:void(0);">About Us</a>
+                    </li>
+                    <li class="text-cap">
+                      <a href="javascript:void(0);">Contact</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <!-- main-content -->
-      <div class="content-wrap">
-        <div class="inputs-container">
-          <form method="POST" autocomplete="off" id="form">
-            <!-- username -->
-            <div class="input-wrap username-wrap d-flex">
-              <span>
-                <i class="fa-solid fa-user"></i>
-              </span>
-              <input type="text" placeholder="username" name="username" id="username" required />
-            </div>
-            <span class="invalidField" id="invalidUsername"></span>
+        <!-- main-content -->
+        <div class="content-wrap">
+          <div class="inputs-container">
+            <form
+              method="POST"
+              autocomplete="off"
+              id="form"
+              onsubmit="(e) => {}"
+            >
+              <!-- username -->
+              <div class="input-wrap username-wrap d-flex">
+                <span>
+                  <i class="fa-solid fa-user"></i>
+                </span>
+                <input
+                  type="text"
+                  placeholder="username"
+                  name="username"
+                  id="username"
+                  required
+                />
+              </div>
+              <span class="invalidField" id="invalidUsername"></span>
 
-            <!-- email -->
-            <div class="input-wrap email-wrap d-flex">
-              <span>
-                <i class="fa-solid fa-envelope"></i>
-              </span>
-              <input type="email" placeholder="Email" name="email" id="email" />
-            </div>
-            <span class="invalidField" id="invalidEmail"></span>
+              <!-- email -->
+              <div class="input-wrap email-wrap d-flex">
+                <span>
+                  <i class="fa-solid fa-envelope"></i>
+                </span>
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                  id="email"
+                />
+              </div>
+              <span class="invalidField" id="invalidEmail"></span>
 
-            <!-- password -->
-            <div class="input-wrap password-wrap d-flex">
-              <span>
-                <i class="fa-solid fa-lock"></i>
-              </span>
-              <input type="password" placeholder="Password" name="password" id="password" />
-              <span class="showPassword">
-                <i class="fa-solid fa-eye eyeVisible"></i>
-                <i class="fa-solid fa-eye-slash eyeNotVisible"></i>
-              </span>
-            </div>
-            <span class="invalidField" id="invalidPassword"></span>
+              <!-- password -->
+              <div class="input-wrap password-wrap d-flex">
+                <span>
+                  <i class="fa-solid fa-lock"></i>
+                </span>
+                <input
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  id="password"
+                />
+                <span class="showPassword">
+                  <i class="fa-solid fa-eye eyeVisible"></i>
+                  <i class="fa-solid fa-eye-slash eyeNotVisible"></i>
+                </span>
+              </div>
+              <span class="invalidField" id="invalidPassword"></span>
 
-            <!-- submit -->
-            <button class="btn-submit text-upp" type="submit" id="btnSubmit">
-              GET STARTED
-            </button>
-            <!-- create account - forget password -->
-            <ul class="main-content-ul d-flex">
-              <li>
-                <a href="javascript:void(0);" class="text-upp">Sign in</a>
-              </li>
-              <li>
-                <a href="javascript:void(0);" class="text-cap">Get Support</a>
-              </li>
-            </ul>
-          </form>
-        </div>
-      </div>
-
-      <!-- footer -->
-      <footer>
-        <div class="container">
-          <div class="footer-wrap d-flex">
-            <ul class="d-flex">
-              <li>
-                <a href="javascript:void(0);">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="javascript:void(0);">Terms & Conditions</a>
-              </li>
-              <li>
-                <a href="javascript:void(0);">Contact Us</a>
-              </li>
-            </ul>
-            <p class="text-cap">
-              &copy; 2025 Dance Academy. All rights reserved.
-            </p>
+              <!-- submit -->
+              <button class="btn-submit text-upp" type="submit" id="btnSubmit">
+                GET STARTED
+              </button>
+              <!-- create account - forget password -->
+              <ul class="main-content-ul d-flex">
+                <li>
+                  <a href="javascript:void(0);" class="text-upp">Sign in</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" class="text-cap">Get Support</a>
+                </li>
+              </ul>
+            </form>
           </div>
         </div>
-      </footer>
-    </section>
-  </main>
 
-  <script src="./services/services.js"></script>
-</body>
+        <!-- footer -->
+        <footer>
+          <div class="container">
+            <div class="footer-wrap d-flex">
+              <ul class="d-flex">
+                <li>
+                  <a href="javascript:void(0);">Privacy Policy</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);">Terms & Conditions</a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);">Contact Us</a>
+                </li>
+              </ul>
+              <p class="text-cap">
+                &copy; 2025 Dance Academy. All rights reserved.
+              </p>
+            </div>
+          </div>
+        </footer>
+      </section>
+    </main>
 
+    <script src="./services/services.js"></script>
+  </body>
 </html>

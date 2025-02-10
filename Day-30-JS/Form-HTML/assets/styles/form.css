@@ -116,13 +116,8 @@ header {
   font-weight: 600;
 }
 
-.header-wrap ul li a:hover {
-  color: white;
-  background-color: rgba(80, 56, 60, 0.8);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 10px;
-}
-
-.active {
+.header-wrap ul li a:hover,
+.header-wrap ul li a.active {
   color: white;
   background-color: rgba(80, 56, 60, 0.8);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 8px 10px;
@@ -227,7 +222,7 @@ form {
 .content-wrap {
   padding: 16px;
   max-width: 350px;
-  margin: 200px auto;
+  margin: 250px auto;
 }
 /* inputs */
 .input-wrap {

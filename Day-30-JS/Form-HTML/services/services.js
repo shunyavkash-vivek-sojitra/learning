@@ -1,3 +1,6 @@
+// ative tabs
+let tabActive = document.querySelectorAll("header nav ul li a");
+
 // form
 let input = document.querySelectorAll("input");
 
@@ -33,10 +36,28 @@ const getData = () => {
   return JSON.parse(localStorage.getItem("User"));
 };
 
+// set tab active
+const setTabActive = (e) => {
+  tabActive.forEach((tab) => {
+    // remove active
+    tab.classList.remove("active");
+  });
+
+  // add active
+  e.target.classList.add("active");
+};
+
+// tab active calling
+tabActive.forEach((tab) => {
+  tab.addEventListener("click", (e) => {
+    setTabActive(e);
+  });
+});
+
 // validate username
 const validateUsername = () => {
   // rule
-  const userNameRegex = /[a-z][0-9]/g;
+  const userNameRegex = /^(?=.*[a-z])(?=.*[0-9])[a-z0-9]+$/;
   const checkUserName = username.value;
   if (checkUserName === "") {
     usernameWrap.style.border = "1px solid rgb(252, 99, 107)";
@@ -90,7 +111,7 @@ const validatePassword = () => {
   } else if (!passwordRegex.test(checkPassword)) {
     passwordWrap.style.border = "1px solid rgb(252, 99, 107)";
     invalidPassword.style.opacity = 1;
-    invalidPassword.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Password must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number.`;
+    invalidPassword.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 special character.`;
   } else {
     passwordWrap.style.border = "1px solid rgb(57, 161, 83)";
     invalidPassword.style.display = "none";
@@ -130,6 +151,15 @@ passwordWrap.addEventListener("input", () => {
 // btnSubmit
 btnSubmit.addEventListener("click", (e) => {
   e.preventDefault();
+
+  const isUsernameValid = validateUsername();
+  const isEmailValid = validateEmail();
+  const isPasswordValid = validatePassword();
+
+  if (!isUsernameValid || !isEmailValid || !isPasswordValid) {
+    return;
+  }
+
   let dataStack = getData() || [];
   const userData = {};
 
@@ -139,10 +169,12 @@ btnSubmit.addEventListener("click", (e) => {
     }
     userData[element.name] = element.value;
   });
-  console.log(Object.keys(userData));
+
   if (Object.keys(userData) == 0) {
     return;
   }
   dataStack.push(userData);
   setData(dataStack);
+
+  console.log("Form submitted successfully!");
 });
