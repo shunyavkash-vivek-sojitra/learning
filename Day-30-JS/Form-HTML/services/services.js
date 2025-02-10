@@ -152,13 +152,9 @@ passwordWrap.addEventListener("input", () => {
 btnSubmit.addEventListener("click", (e) => {
   e.preventDefault();
 
-  const isUsernameValid = validateUsername();
-  const isEmailValid = validateEmail();
-  const isPasswordValid = validatePassword();
-
-  if (!isUsernameValid || !isEmailValid || !isPasswordValid) {
-    return;
-  }
+  validateUsername();
+  validateEmail();
+  validatePassword();
 
   let dataStack = getData() || [];
   const userData = {};
