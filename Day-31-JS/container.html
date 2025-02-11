@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Remove Element Dynamically</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/styles/container.css">
+</head>
+
+<body>
+    <main>
+        <section>
+            <div class="container">
+                <div class="flex-box d-flex">
+                    <h1>DOM Manipulation</h1>
+                    <div class="scroll-box d-flex">
+                        <!-- buttons -->
+                        <div class="element-button d-flex">
+                            <div class="btn-clear-wrap">
+                                <button type="button" id="btn-clear">Clear</button>
+                            </div>
+                            <div class="btn-element-wrap">
+                                <button type="button" id="btn-add">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                                <button type="button" id="btn-sub">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- container -->
+                        <ul class="content-box">
+                            <!-- items goes here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./services/container.js"></script>
+</body>
+
+</html>
