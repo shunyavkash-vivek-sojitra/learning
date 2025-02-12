@@ -49,7 +49,7 @@ const addItem = async () => {
       return response.json();
     })
     .then((data) => {
-      const userName = data.results[0].name.first;
+      const userName = `${data.results[0].name.first}  ${data.results[0].name.last}`;
       return userName;
     })
     .catch((error) => {
