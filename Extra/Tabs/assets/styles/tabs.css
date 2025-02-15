@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.tabs-container {
+  width: 100%;
+  max-width: 800px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.tabs {
+  display: flex;
+  background-color: #6200ea;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 15px 20px;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-button:hover {
+  background-color: #3700b3;
+}
+
+.tab-button.active {
+  background-color: #3700b3;
+  font-weight: bold;
+}
+
+.tab-content {
+  padding: 20px;
+}
+
+.tab-pane {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.tab-pane.active {
+  display: block;
+  opacity: 1;
+}
+
+.tab-pane h2 {
+  margin-top: 0;
+  color: #6200ea;
+}
+
+.tab-pane .poster {
+  margin-top: 16px;
+  width: 100%;
+}
+.tab-pane .poster img {
+  width: 100%;
+  /* transform: translateY(500px); */
+  object-fit: cover;
+  transition: all 0.4s ease;
+}
+/* 
+.tab-pane.active .poster img {
+  transform: translateY(0px);
+} */
