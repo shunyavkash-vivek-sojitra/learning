@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Default title
         const title = pane.querySelector("h2");
-        console.log(pane);
         if (title) {
           title.style.transform = "translateX(250px)";
           title.style.opacity = "0";
@@ -25,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Default cta
         const cta = pane.querySelector("a");
-        console.log(pane);
         if (cta) {
           cta.style.bottom = "-440px";
           cta.style.opacity = "0";

@@ -114,9 +114,9 @@ body {
 }
 
 .cta {
+  width: max-content;
   position: absolute;
   bottom: -440px;
-  right: 60px;
   color: #333;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 12px 24px;
@@ -130,6 +130,7 @@ body {
 }
 
 .tab-pane.active .cta {
+  right: 40px;
   bottom: 40px;
   opacity: 1;
 }
@@ -137,6 +138,23 @@ body {
 .cta:hover {
   color: #3700b3;
 }
+
+@media (max-width: 425px) {
+  .tab-pane.active .cta {
+    right: 35%;
+  }
+}
+@media (max-width: 375px) {
+  .tab-pane.active .cta {
+    right: 35%;
+  }
+}
+@media (max-width: 320px) {
+  .tab-pane.active .cta {
+    right: 28%;
+  }
+}
+
 
 @keyframes zoomInOut {
   0% {
