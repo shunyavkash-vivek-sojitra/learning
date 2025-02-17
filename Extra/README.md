@@ -1,3 +1,5 @@
 Extra Practice
 
-Splide Slider - Demo [HTML-CSS-JavaScript]
+-> Splide Slider - [HTML - CSS - JavaScript]
+
+-> Interactive Tabs - [HTML - CSS - JavaScript]
