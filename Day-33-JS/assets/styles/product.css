@@ -30,6 +30,7 @@ body {
 }
 
 h1 {
+  top: 25px;
   text-align: center;
   color: var(--primary-color);
   font-size: 2.5rem;
@@ -120,9 +121,15 @@ select:focus {
 }
 
 table {
+  position: relative;
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+}
+
+thead {
+  position: sticky;
+  top: 0;
 }
 
 th,
@@ -130,6 +137,10 @@ td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+}
+
+#reorder {
+  cursor: pointer;
 }
 
 th {
