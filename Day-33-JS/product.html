@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Modern Product Management UI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/styles/product.css">
 </head>
 
@@ -20,7 +21,7 @@
             </div>
             <div class="form-group">
                 <label for="price">Price</label>
-                <input type="number" id="price" placeholder="Enter price" step="0.01" required>
+                <input type="number" id="price" placeholder="Enter price" required>
             </div>
             <div class="form-group">
                 <label for="category">Category</label>
@@ -28,20 +29,15 @@
             </div>
             <div class="form-group">
                 <label for="rating">Rating</label>
-                <input type="number" id="rating" placeholder="Enter rating" step="0.1" min="0" max="5" required>
+                <input type="number" id="rating" placeholder="Enter rating" required>
             </div>
-            <input type="submit" class="btnAdd btn-primary" value="Add Product" onclick="createProduct(event)""></input>
+            <input type="submit" class="btnAdd btn-primary" value="Add Product" onclick="createProduct(event)">
         </form>
 
         <!-- Search and Filter -->
         <div class=" controls card">
             <input type="text" id="searchBox" placeholder="Search products..." class="search-input">
-            <select id="filterCategory" class="filter-select">
-                <option value="">All Categories</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Accessories">Accessories</option>
-                <option value="Home">Home</option>
-            </select>
+            <select id="filterCategory" class="filter-select"></select>
     </div>
 
     <!-- Table to Display Products -->
@@ -49,11 +45,31 @@
         <table id="productTable">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th>Rating</th>
+                    <th id="reorder">ID</th>
+                    <th>Name
+                        <span class="arrow-wrap">
+                            <i class="fa-solid fa-arrow-up" id="name-up"></i>
+                            <i class="fa-solid fa-arrow-down" id="name-down"></i>
+                        </span>
+                    </th>
+                    <th>Price
+                        <span class="arrow-wrap">
+                            <i class="fa-solid fa-arrow-up" id="price-up"></i>
+                            <i class="fa-solid fa-arrow-down" id="price-down"></i>
+                        </span>
+                    </th>
+                    <th>Category
+                        <span class="arrow-wrap">
+                            <i class="fa-solid fa-arrow-up" id="category-up"></i>
+                            <i class="fa-solid fa-arrow-down" id="category-down"></i>
+                        </span>
+                    </th>
+                    <th>Rating
+                        <span class="arrow-wrap">
+                            <i class="fa-solid fa-arrow-up" id="rating-up"></i>
+                            <i class="fa-solid fa-arrow-down" id="rating-down"></i>
+                        </span>
+                    </th>
                 </tr>
             </thead>
             <tbody id="tbody">

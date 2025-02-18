@@ -133,18 +133,25 @@ td {
 }
 
 th {
-  text-align: center;
   background-color: var(--primary-color);
   color: #fff;
+  padding: 18px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   font-weight: 600;
 }
-th:first-child {
-  border-top-left-radius: var(--border-radius);
-  border-bottom-left-radius: var(--border-radius);
+.arrow-wrap {
+  cursor: pointer;
 }
-th:last-child {
-  border-top-right-radius: var(--border-radius);
-  border-bottom-right-radius: var(--border-radius);
+.arrow-wrap i {
+  padding: 4px;
+  font-size: 14px;
+  transform: scale(1);
+  transition: all 0.2s ease;
+}
+.arrow-wrap i:hover {
+  transform: scale(1.1);
 }
 
 tr {
@@ -154,4 +161,8 @@ tr {
 tr:hover {
   background-color: #f1f1f1;
   transition: background-color 0.3s ease;
+}
+
+td {
+  padding-left: 20px;
 }
