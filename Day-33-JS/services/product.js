@@ -212,3 +212,16 @@ filterCategory.addEventListener("input", (choice) => {
 // });
 
 // =================================================== Searching /
+searchBox.addEventListener("input", (string) => {
+  const searching = String(string.target.value).toLowerCase();
+  // console.log(searching);
+  const searchedCategory = products.filter((element) => {
+    return element.name.toLowerCase().includes(searching);
+  });
+
+  displayProduct(searchedCategory);
+
+  console.log(searchedCategory);
+});
+
+// =================================================== Clear Table /
