@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debounce - Demo</title>
+    <link rel="stylesheet" href="./assets/styles/debounce.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Debounce - Demo</h1>
+
+        <!-- Search -->
+        <div class=" controls card">
+            <input type="search" id="searchBox" placeholder="Search Here..." class="search-input">
+        </div>
+
+        <!-- Table -->
+        <div class="table-container card">
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th id="reorder">ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+                    <!-- Element added here... -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script src="./services/debounce.js"></script>
+</body>
+
+</html>
