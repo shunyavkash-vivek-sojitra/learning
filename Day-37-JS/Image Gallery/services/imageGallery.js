@@ -28,6 +28,10 @@ const fetchImages = async () => {
       imgElement.alt = image.tags;
       imgElement.loading = "lazy";
 
+      imgElement.onload = () => {
+        imgElement.classList.add("show");
+      };
+
       imageWrapper.appendChild(imgElement);
       gallery.appendChild(imageWrapper);
 
@@ -55,7 +59,10 @@ const observer = new IntersectionObserver(
       fetchImages();
     }
   },
-  { threshold: 1.0 }
+  {
+    threshold: 1.0,
+    rootMargin: "100px",
+  }
 );
 
 fetchImages();

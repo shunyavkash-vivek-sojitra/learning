@@ -13,15 +13,37 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 10px;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  padding-inline: 16px;
 }
 
+/* header */
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  z-index: 999;
+}
+
+h1 {
+  color: darkslategrey;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+/* main */
 .gallery {
   /* display: grid; */
   /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
@@ -34,20 +56,24 @@ body {
   margin: 20px auto;
 }
 
-.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .gallery img {
   width: 100%;
+  opacity: 0;
+  visibility: hidden;
   /* aspect-ratio: 4 / 7; */
   /* added */
   margin-bottom: 10px;
 
   object-fit: cover;
   border-radius: 5px;
-  transition: all 0.3s ease-in-out;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out,
+    transform 0.3s ease;
+}
+
+.gallery img.show {
+  opacity: 1;
+  visibility: visible;
+  /* transform: translateY(0); */
 }
 
 .gallery img:hover {
