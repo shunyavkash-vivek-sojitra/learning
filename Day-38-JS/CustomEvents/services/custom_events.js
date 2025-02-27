@@ -7,7 +7,7 @@ const loadData = new CustomEvent("fetchData", {
 document.addEventListener("fetchData", (event) => {
   console.log(event.detail.message);
 });
-
+console.log("Wait for a while...");
 setTimeout(() => {
   document.dispatchEvent(loadData);
 }, 2000);
