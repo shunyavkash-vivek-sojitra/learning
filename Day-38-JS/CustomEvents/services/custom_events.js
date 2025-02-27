@@ -1,13 +1,26 @@
 const contentBox = document.querySelector("#contentBox");
+const content = document.querySelector("#contentInput");
 
-const loadData = new CustomEvent("fetchData", {
-  detail: { message: "Data has been loaded successfully." },
-});
+const addContent = (event) => {
+  event.preventDefault();
 
-document.addEventListener("fetchData", (event) => {
-  console.log(event.detail.message);
-});
-console.log("Wait for a while...");
-setTimeout(() => {
-  document.dispatchEvent(loadData);
-}, 2000);
+  const loadData = new CustomEvent("fetchData", {
+    detail: { message: content.value },
+  });
+
+  document.addEventListener("fetchData", (event) => {
+    console.log(event.detail.message);
+  });
+
+  setTimeout(() => {
+    document.dispatchEvent(loadData);
+
+    if (content.value) {
+      contentBox.textContent = content.value;
+    }
+  }, 1500);
+};
+
+if (!content.value) {
+  contentBox.textContent = "Write Something...";
+}
