@@ -1,0 +1,100 @@
+/* Importing a sleek Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+:root {
+  --primary-color: #fffbdb;
+  --primary-color-rgb: rgba(255, 251, 219);
+  --secondary-color: #cdc7e5;
+  --secondary-color-rgb: rgba(205, 199, 229);
+  --card-bg-color: #7776bc;
+  --card-bg-color-rgb: rgba(119, 118, 188);
+  --text-color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  position: relative;
+  background: linear-gradient(
+    to right,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.access-denied {
+  position: absolute;
+  margin-top: 16px;
+  top: 0;
+  left: 50%;
+  background-color: var(--card-bg-color);
+  padding: 6px 12px;
+  border: 2px solid var(--secondary-color);
+  border-radius: 8px;
+  transform: translateX(-50%);
+}
+
+.access-denied span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.access-denied svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--secondary-color);
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 400px;
+  background: var(--card-bg-color);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.btn-coord {
+  background: var(--primary-color);
+  color: var(--card-bg-color);
+  border: none;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-coord:hover {
+  background: var(--secondary-color);
+}
+
+.coord-display {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.label {
+  font-weight: 600;
+}
