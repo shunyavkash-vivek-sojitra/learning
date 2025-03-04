@@ -4,7 +4,6 @@ const longitudeShow = document.querySelector("#longitude");
 const address = document.querySelector("#address");
 
 const accessDenied = document.querySelector("#accessDenied");
-const userDenied = document.querySelector("#userDenied");
 
 const API_KEY = "36a9b56165d24204a68479211af510f9";
 
