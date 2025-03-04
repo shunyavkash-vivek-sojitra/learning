@@ -6,10 +6,7 @@ const address = document.querySelector("#address");
 const accessDenied = document.querySelector("#accessDenied");
 const userDenied = document.querySelector("#userDenied");
 
-// ========================================== Button /
-btnCoord.addEventListener("click", () => {
-  fetchCoord();
-});
+const API_KEY = "36a9b56165d24204a68479211af510f9";
 
 // ========================================== Error Tost /
 const errorTost = (message) => {
@@ -23,43 +20,29 @@ const errorTost = (message) => {
 
 // ========================================== fetch Address - Short /
 const addressShort = async (latitude, longitude) => {
-  const locationAPI = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}%2C+${longitude}&key=36a9b56165d24204a68479211af510f9`;
+  const locationAPI = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}%2C+${longitude}&key=${API_KEY}`;
+
+  // Fetching Button
+  const originalText = btnCoord.textContent;
+  btnCoord.textContent = "Fetching...";
+  btnCoord.disabled = true;
 
   try {
     const response = await fetch(locationAPI);
     const data = await response.json();
-    address.textContent = `${data.results[0].formatted} ${data.results[0].annotations.flag}`;
-    console.log(data.results[0]);
-    errorTost("Address Fetched.");
+
+    if (data.results.length > 0) {
+      address.textContent = `${data.results[0].formatted} ${data.results[0].annotations.flag}`;
+      console.log(data.results[0]);
+      errorTost("Address Fetched.");
+    }
   } catch (error) {
     console.log(error.message);
     errorTost("Error Fetching Address.");
-  }
-};
-
-// ========================================== fetch Geolocation - Current Location /
-const fetchCoord = () => {
-  const getGeolocation = navigator.geolocation;
-
-  // Geolocation Supported
-  if (getGeolocation) {
-    // Location Permission Allowed
-    getGeolocation.getCurrentPosition(
-      (response) => {
-        const { latitude, longitude } = response.coords;
-        console.log(response.coords);
-        addressShort(latitude, longitude);
-      },
-      (error) => {
-        // Location Permission Not Allowed
-        console.log(error.message);
-        errorTost(error.message);
-      }
-    );
-  } else {
-    // Geolocation Not Supported
-    errorTost("Geolocation may not supported!");
-    console.log("Geolocation may not supported!");
+  } finally {
+    // Revert to Original "Get Address"
+    btnCoord.textContent = originalText;
+    btnCoord.disabled = false;
   }
 };
 
@@ -77,13 +60,26 @@ const fetchLiveLocation = () => {
 
         latitudeShow.textContent = latitude;
         longitudeShow.textContent = longitude;
+        addressShort(latitude, longitude);
       },
       (error) => {
         // Location Permission Not Allowed
-        console.log(error.message);
-      },
-      {
-        enableHighAccuracy: true,
+        let message = "";
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            message = "User denied the request for Geolocation.";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            message = "Location information is unavailable.";
+            break;
+          case error.TIMEOUT:
+            message = "The request to get user location timed out.";
+            break;
+          default:
+            message = "An unknown error occurred.";
+        }
+        console.log(message);
+        errorTost("Error fetching live location.");
       }
     );
   } else {
@@ -93,4 +89,5 @@ const fetchLiveLocation = () => {
   }
 };
 
-fetchLiveLocation();
+// ========================================== Button /
+btnCoord.addEventListener("click", fetchLiveLocation);
