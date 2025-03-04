@@ -44,14 +44,10 @@ const fetchCoord = () => {
   // Geolocation Supported
   if (getGeolocation) {
     // Location Permission Allowed
-    getGeolocation.watchPosition(
+    getGeolocation.getCurrentPosition(
       (response) => {
         const { latitude, longitude } = response.coords;
         console.log(response.coords);
-
-        latitudeShow.textContent = latitude;
-        longitudeShow.textContent = longitude;
-
         addressShort(latitude, longitude);
       },
       (error) => {
@@ -74,7 +70,7 @@ const fetchLiveLocation = () => {
   // Geolocation Supported
   if (getLiveGeolocation) {
     // Location Permission Allowed
-    getLiveGeolocation.getCurrentPosition(
+    getLiveGeolocation.watchPosition(
       (response) => {
         const { latitude, longitude } = response.coords;
         console.log("live:", response.coords);
@@ -85,6 +81,9 @@ const fetchLiveLocation = () => {
       (error) => {
         // Location Permission Not Allowed
         console.log(error.message);
+      },
+      {
+        enableHighAccuracy: true,
       }
     );
   } else {
