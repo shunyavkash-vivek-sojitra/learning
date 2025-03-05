@@ -5,8 +5,6 @@ const address = document.querySelector("#address");
 
 const accessDenied = document.querySelector("#accessDenied");
 
-const API_KEY = "36a9b56165d24204a68479211af510f9";
-
 // ========================================== Error Tost /
 const errorTost = (message) => {
   accessDenied.textContent = message;
@@ -19,7 +17,7 @@ const errorTost = (message) => {
 
 // ========================================== fetch Address - Short /
 const addressShort = async (latitude, longitude) => {
-  const locationAPI = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}%2C+${longitude}&key=${API_KEY}`;
+  const locationAPI = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}%2C+${longitude}&key=36a9b56165d24204a68479211af510f9`;
 
   // Fetching Button
   const originalText = btnCoord.textContent;
