@@ -722,17 +722,20 @@ header {
 
 /* single wrapper */
 .single-wrapper {
-  background-image: url("../images/single-section/home1_banner1.jpg");
+  background: url("../images/single-section/home1_banner1.jpg");
+  background-blend-mode: multiply;
   min-height: 515px;
   background-position: center;
   background-size: cover;
   height: 100%;
   margin-top: 32px;
+  background-color: rgba(65, 65, 65, 0.3);
   justify-content: flex-end;
 }
 
 .s-w-content {
   width: 50%;
+  padding-inline: 6px;
   justify-content: center;
   position: relative;
   align-items: center;
@@ -1492,9 +1495,15 @@ input:focus {
   }
 
   /* single wrapper */
-  .s-w-content {
-    width: 50%;
+  .single-wrapper {
+    transform: scaleX(-1);
     justify-content: center;
+  }
+  .s-w-content {
+    width: 100%;
+    transform: scaleX(-1);
+    padding-inline: 16px;
+    justify-content: flex-start;
     position: relative;
     align-items: center;
   }
