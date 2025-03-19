@@ -8,7 +8,7 @@ const fileGen = async () => {
     await fs.writeFile(filePath, string + " ");
     console.log("New file created succesfully.");
   } catch (error) {
-    console.log("Error creating new file!");
+    console.log("🚨 Error creating new file!");
   }
 };
 
@@ -21,7 +21,7 @@ const fileRead = async () => {
     console.log("Reading file successfully.");
     console.log("file.txt:", fetchedFile);
   } catch (error) {
-    console.log("Error reading file!");
+    console.log("🚨 Error reading file!");
   }
 };
 
@@ -34,7 +34,7 @@ const fileAppend = async () => {
     console.log("Append file successfully.");
     console.log("Last appended texts:", string);
   } catch (error) {
-    console.log("Error reading file!");
+    console.log("🚨 Error reading file!");
   }
 };
 
@@ -46,7 +46,7 @@ const fileDelete = async () => {
     await fs.unlink(filePath);
     console.log("File deleted successfully.");
   } catch (error) {
-    console.log("Error deleting file!");
+    console.log("🚨 Error deleting file!");
   }
 };
 
