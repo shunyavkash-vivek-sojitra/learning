@@ -1,6 +1,6 @@
 const fs = require("fs").promises;
 
-const string = "Hello Dude! How Are You? hy";
+const string = "Hello Dude! How Are You?";
 const filePath = "./file.txt";
 // ==================================================== Create File
 const fileGen = async () => {
@@ -32,7 +32,6 @@ const fileAppend = async () => {
   try {
     await fs.appendFile(filePath, string + " ");
     console.log("Append file successfully.");
-    console.log("Last appended texts:", string);
   } catch (error) {
     console.log("🚨 Error reading file!");
   }
@@ -115,6 +114,9 @@ const fileCopy = () => {
 
 fileCopy();
 
+console.log("Directory:", __dirname); // current Directory path
+console.log("File:", __filename); // current File path
+
 // You can use the below methods for large projects:
-    // createWriteStream()
-    // createReadStream()
+// createWriteStream()
+// createReadStream()
